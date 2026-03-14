@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    [SerializeField] private List<PowerUp> _powerUps = new List<PowerUp>();
+    
     [SerializeField] private Enemy _enemy;
+    
     [SerializeField] private PlayerController _player;
+    
     [SerializeField] private ScoreDisplay _scoreDisplay;
     [SerializeField] private EnemyDisplay _enemyDisplay;
+    
+
     private float _spawnRange = 9;
     private float _defSpawnChance = 0.5f;
     private float _spawnChance = 0.5f;
     private float _chanceStep = 0.1f;
+    
     private int _step = 0;
     private int _enemyCount = 1;
     private int _currentWave = 0;
+    
     private bool _waveSpawnedThisClear;
+    
 
     private void Update()
     {
@@ -57,9 +66,21 @@ public class SpawnManager : MonoBehaviour
 
         SpawnEnemyWave(enemiesInWave);
 
+        SpawnRandomPowerUp();
+
         _currentWave++;
         _step++;
     }
+    
+    private void SpawnRandomPowerUp()
+    {
+        int powerUp = Random.Range(0, _powerUps.Count);
+
+        Vector3 spawnPos = GenerateSpawnPosition();
+
+        Instantiate(_powerUps[powerUp], spawnPos, _powerUps[powerUp].transform.rotation);
+    }
+
     private void SpawnEnemyWave(int enemiesToSpawn)
     {
         for (int i = 0; i < enemiesToSpawn; i++)

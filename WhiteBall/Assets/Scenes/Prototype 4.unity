@@ -1925,7 +1925,7 @@ PrefabInstance:
     - target: {fileID: 4771750532016419514, guid: ea90de0ca21beda4d9464af4d70e8a02,
         type: 3}
       propertyPath: _soundColdown
-      value: 0.3
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4771750532016419514, guid: ea90de0ca21beda4d9464af4d70e8a02,
         type: 3}
@@ -1935,7 +1935,7 @@ PrefabInstance:
     - target: {fileID: 4771750532016419514, guid: ea90de0ca21beda4d9464af4d70e8a02,
         type: 3}
       propertyPath: _startSoundColdown
-      value: 0.3
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7739212473314463328, guid: ea90de0ca21beda4d9464af4d70e8a02,
         type: 3}
