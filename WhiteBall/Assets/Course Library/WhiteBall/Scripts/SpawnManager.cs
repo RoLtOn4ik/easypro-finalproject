@@ -8,11 +8,10 @@ public class SpawnManager : MonoBehaviour
     
     [SerializeField] private Enemy _enemy;
     
-    [SerializeField] private PlayerController _player;
-    
     [SerializeField] private ScoreDisplay _scoreDisplay;
     [SerializeField] private EnemyDisplay _enemyDisplay;
-    
+
+    private PlayerController _player;
 
     private float _spawnRange = 9;
     private float _defSpawnChance = 0.5f;
@@ -24,7 +23,11 @@ public class SpawnManager : MonoBehaviour
     private int _currentWave = 0;
     
     private bool _waveSpawnedThisClear;
-    
+
+    private void Start()
+    {
+        _player = FindFirstObjectByType<PlayerController>();
+    }
 
     private void Update()
     {

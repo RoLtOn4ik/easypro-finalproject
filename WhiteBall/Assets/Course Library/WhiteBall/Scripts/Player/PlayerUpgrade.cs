@@ -6,6 +6,7 @@ public class PlayerUpgrade : MonoBehaviour
 {
     [SerializeField] private PlayerPlaySound _playerSound;
     [SerializeField] private GameObject _powerUpIndicator;
+    [SerializeField] private PoitionProjectile poition;
 
     private bool _isPowerUp;
     private string _tipeOfUpgrade;
@@ -21,11 +22,18 @@ public class PlayerUpgrade : MonoBehaviour
     {
         _tipeOfUpgrade = tipeOfUpgrade;
         
-        _isPowerUp = true;
-        
-        _powerUpIndicator.gameObject.SetActive(true);
-        
-        StartCoroutine(PowerupCountdownRoutine());
+        if(_tipeOfUpgrade != "Potion")
+        {
+            _isPowerUp = true;
+
+            _powerUpIndicator.gameObject.SetActive(true);
+
+            StartCoroutine(PowerupCountdownRoutine());
+        }
+        else 
+            Instantiate(poition, gameObject.transform.position, poition.transform.rotation);
+
+
     }
 
     private void Update()
@@ -43,7 +51,6 @@ public class PlayerUpgrade : MonoBehaviour
                 Destroy(enemy.gameObject);
             }
         }
-
     }
 
     private IEnumerator PowerupCountdownRoutine()

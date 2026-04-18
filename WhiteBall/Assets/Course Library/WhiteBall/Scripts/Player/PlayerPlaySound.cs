@@ -13,7 +13,7 @@ public class PlayerPlaySound : MonoBehaviour
     {
         if (_soundColdown <= 0)
         {
-            //_audio.PlayOneShot(_radiationSound, 0.5f);
+            _audio.PlayOneShot(_radiationSound, 0.5f);
 
             _soundColdown = _startSoundColdown;
         }

@@ -6,7 +6,6 @@ public class RotateCamera : MonoBehaviour
 {
     [SerializeField] private float _rotateSpeed;
 
-
     void Update()
     {
         float _horizontalInput = Input.GetAxis("Horizontal");

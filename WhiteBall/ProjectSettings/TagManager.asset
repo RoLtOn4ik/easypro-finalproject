@@ -9,6 +9,10 @@ TagManager:
   - Goal
   - PlayerGoal
   - EnemyGoal
+  - Radiation
+  - potion
+  - Potion
+  - Projectile
   layers:
   - Default
   - TransparentFX
