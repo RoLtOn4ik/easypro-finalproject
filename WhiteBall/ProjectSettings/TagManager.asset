@@ -13,6 +13,7 @@ TagManager:
   - potion
   - Potion
   - Projectile
+  - Ground
   layers:
   - Default
   - TransparentFX

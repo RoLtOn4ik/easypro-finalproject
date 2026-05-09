@@ -55,9 +55,6 @@ public class MenuSpawnManager : MonoBehaviour
 
         if (Player.hasNoTarget && Player.onGround)
         {
-            Player.Rigidbod.angularVelocity = Vector3.zero;
-            Player.Rigidbod.velocity = Vector3.zero;
-
             int enemyIndex = ChooseRandomEnemyIndex();
 
             if (Enemies.Count != 0)
@@ -66,9 +63,6 @@ public class MenuSpawnManager : MonoBehaviour
 
         if (Enemy.hasNoTarget && Enemy.onGround)
         {
-            Enemy.Rigidbod.angularVelocity = Vector3.zero;
-            Enemy.Rigidbod.velocity = Vector3.zero;
-
             GiveTarget(Enemy, Player);
         }
 
